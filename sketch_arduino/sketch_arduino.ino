@@ -126,7 +126,21 @@ uint32_t Wheel(byte WheelPos) {
   if(WheelPos < 170) {
     WheelPos -= 85;
     return strip.Color(0, WheelPos * 3, 255 - WheelPos * 3);
+int getMittelwertSkin(){
+
+int mittelWertSkin,sensorValSkin = 0;
+
+  for(int i=1; i<= 15; i++){
+      
+      
+      mittelWertSkin = map(analogRead(A0), 0, 1023, 255, 0);
+      sensorValSkin += mittelWertSkin;
+      mittelWertSkin = sensorValSkin/i;
+      Serial.println(mittelWertSkin);
+      
+      
   }
   WheelPos -= 170;
   return strip.Color(WheelPos * 3, 255 - WheelPos * 3, 0);
+return mittelWertSkin;  
 }
