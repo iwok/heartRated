@@ -36,7 +36,7 @@ void loop() {
   for(int i=0;i<NUMPIXELS;i++){
 
     // pixels.Color takes RGB values, from 0,0,0 up to 255,255,255
-    pixels.setPixelColor(i, pixels.Color(sensorValSkin,sensorValSkin,sensorValSkin*3)); // Moderately bright green color.
+    pixels.setPixelColor(i, pixels.Color(sensorValSkin,sensorValSkin*3,sensorValSkin)); // Moderately bright green color.
 
     pixels.show(); // This sends the updated pixel color to the hardware.
 
@@ -47,16 +47,16 @@ void loop() {
 
 int getMittelwertSkin(){
 
-int mittelWertSkin,sensorValSkin = 0;
-
-  for(int i=1; i<= 15; i++){
-      
-      mittelWertSkin = map(analogRead(A0), 0, 1023, 0, 255);
-      sensorValSkin += mittelWertSkin;
-      mittelWertSkin = sensorValSkin/i;
-      Serial.println(mittelWertSkin);
-     
-  }
-
-return mittelWertSkin;  
+  int mittelWertSkin,sensorValSkin = 0;
+  
+    for(int i=1; i<= 15; i++){
+        
+        mittelWertSkin = map(analogRead(A0), 0, 1023, 0, 255);
+        sensorValSkin += mittelWertSkin;
+        mittelWertSkin = sensorValSkin/i;
+        Serial.println(mittelWertSkin);
+       
+    }
+  
+  return mittelWertSkin;  
 }
