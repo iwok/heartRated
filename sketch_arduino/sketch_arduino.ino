@@ -51,7 +51,7 @@ int mittelWertSkin,sensorValSkin = 0;
 
   for(int i=1; i<= 15; i++){
       
-      mittelWertSkin = map(analogRead(A0), 0, 1023, 255, 0);
+      mittelWertSkin = map(analogRead(A0), 0, 1023, 0, 255);
       sensorValSkin += mittelWertSkin;
       mittelWertSkin = sensorValSkin/i;
       Serial.println(mittelWertSkin);
