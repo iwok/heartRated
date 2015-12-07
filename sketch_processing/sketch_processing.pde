@@ -50,6 +50,7 @@ void draw () {
  float inByte = float(inString);
  inByte = map(inByte, 0, 1023, 0, height);
   
+ exportSensorVal(int(inByte),0,0);
  
  // draw the line:
  stroke(255,50,15,90);
@@ -67,3 +68,14 @@ void draw () {
  }
  }
  
+ void exportSensorVal(int pulse, int moisture, int breath){
+  
+  TableRow newRow = table.addRow();
+  newRow.setInt("time", table.getRowCount() - 1);
+  newRow.setInt("pulseSensorVal", 2);
+  newRow.setInt("moistureSensorVal", 42);
+  newRow.setInt("breathSensorVal", 42);
+  
+  saveTable(table, "data/data.csv"); 
+   
+ }
