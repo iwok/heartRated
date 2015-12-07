@@ -2,6 +2,21 @@
 
  Serial myPort;        // The serial port
  int xPos = 1;         // horizontal position of the graph
+ Table table;          // Table for Sensor values
+ 
+void setup () {
+  // set the window size:
+  size(1200, 300);
+   
+  // Set FrameRate to 1 for better 
+  frameRate(1);
+  // create new Table
+  table = new Table();
+  // Add colums for sensor values
+  table.addColumn("time");
+  table.addColumn("pulseSensorVal");
+  table.addColumn("moistureSensorVal");
+  table.addColumn("breathSensorVal");
 
  // List all the available serial ports
  // if using Processing 2.1 or later, use Serial.printArray()
