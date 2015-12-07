@@ -72,9 +72,9 @@ void draw () {
   
   TableRow newRow = table.addRow();
   newRow.setInt("time", table.getRowCount() - 1);
-  newRow.setInt("pulseSensorVal", 2);
-  newRow.setInt("moistureSensorVal", 42);
-  newRow.setInt("breathSensorVal", 42);
+  newRow.setInt("pulseSensorVal", pulse);
+  newRow.setInt("moistureSensorVal", moisture);
+  newRow.setInt("breathSensorVal", breath);
   
   saveTable(table, "data/data.csv"); 
    
