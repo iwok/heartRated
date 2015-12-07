@@ -15,7 +15,7 @@
 // example for more information on possible values.
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
-int delayval = 100; // delay for half a second
+int delayval = 100; // delay for tenth of a second
 
 // Sensor values for our Project
 // Skin 
