@@ -5,8 +5,8 @@
 
  // List all the available serial ports
  // if using Processing 2.1 or later, use Serial.printArray()
- //println(Serial.list());
- println(Serial.printArray());
+ println(Serial.list());
+ //println(Serial.printArray());
 
  // I know that the first port in the serial list on my mac
  // is always my  Arduino, so I open Serial.list()[0].
