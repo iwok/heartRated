@@ -48,27 +48,27 @@ void draw () {
  inString = trim(inString);
  // convert to an int and map to the screen height:
  float inByte = float(inString);
- inByte = map(inByte, 0, 1023, 0, height);
   
- exportSensorVal(int(inByte),0,0);
+ exportSensorVal(0,int(inByte),0);
  
  // draw the line:
  stroke(255,50,15,90);
  line(xPos, height, xPos, height - inByte);
 
  // at the edge of the screen, go back to the beginning:
- if (xPos >= width) {
- xPos = 0;
- background(255);
- }
- else {
- // increment the horizontal position:
- xPos++;
- }
- }
+   if (xPos >= width) {
+   xPos = 0;
+   background(255);
+   }
+     else {
+     // increment the horizontal position:
+     xPos++;
+     }
+   }
  }
  
- void exportSensorVal(int pulse, int moisture, int breath){
+ void exportSensorVal(int pulse, int moisture, int breath)
+ {
   
   TableRow newRow = table.addRow();
   newRow.setInt("time", table.getRowCount() - 1);
