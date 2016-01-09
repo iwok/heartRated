@@ -43,6 +43,16 @@ void setup () {
 void draw () {
  // everything happens in the serialEvent()
  
+ if(BPM>0){
   TableRow newRow = table.addRow();
+  newRow.setInt("TIME", table.getRowCount() - 1);
+  newRow.setInt("BPM", BPM);
+  newRow.setInt("SKIN", SKIN);
    
+ saveTable(table, "data/data.csv"); 
  }
+ 
+ delay(1000);
+ 
+ }
+ 
