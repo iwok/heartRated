@@ -4,6 +4,11 @@
  int xPos = 1;         // horizontal position of the graph
  Table table;          // Table for Sensor values
  
+ int Sensor;      // HOLDS PULSE SENSOR DATA FROM ARDUINO
+ int BPM;         // HOLDS HEART RATE VALUE FROM ARDUINO
+ int SKIN;        // HOLDS SKIN CONDUCTIVITY VALUE FROM ARDUINO
+ 
+
 void setup () {
   // set the window size:
   size(1200, 300);
