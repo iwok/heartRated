@@ -42,45 +42,7 @@ void setup () {
 
 void draw () {
  // everything happens in the serialEvent()
- }
-
- void serialEvent (Serial myPort) {
- // get the ASCII string:
- String inString = myPort.readStringUntil('\n');
-
- if (inString != null) {
- // trim off any whitespace:
- inString = trim(inString);
- // convert to an int and map to the screen height:
- float inByte = float(inString);
-  
- exportSensorVal(0,int(inByte),0);
  
- // draw the line:
- stroke(255,50,15,90);
- line(xPos, height, xPos, height - inByte);
-
- // at the edge of the screen, go back to the beginning:
-   if (xPos >= width) {
-   xPos = 0;
-   background(255);
-   }
-     else {
-     // increment the horizontal position:
-     xPos++;
-     }
-   }
- }
- 
- void exportSensorVal(int pulse, int moisture, int breath)
- {
-  
   TableRow newRow = table.addRow();
-  newRow.setInt("time", table.getRowCount() - 1);
-  newRow.setInt("pulseSensorVal", pulse);
-  newRow.setInt("moistureSensorVal", moisture);
-  newRow.setInt("breathSensorVal", breath);
-  
-  saveTable(table, "data/data.csv"); 
    
  }
