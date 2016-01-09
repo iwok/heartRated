@@ -13,10 +13,10 @@ void setup () {
   // create new Table
   table = new Table();
   // Add colums for sensor values
-  table.addColumn("time");
-  table.addColumn("pulseSensorVal");
-  table.addColumn("moistureSensorVal");
-  table.addColumn("breathSensorVal");
+  table.addColumn("TIME");
+  table.addColumn("BPM");
+  table.addColumn("SKIN");
+  //table.addColumn("breathSensorVal");
 
  // List all the available serial ports
  // if using Processing 2.1 or later, use Serial.printArray()
