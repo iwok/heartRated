@@ -1,3 +1,4 @@
-# moviEmotions
+# ratedHeart
 
-A Project for visualising emotions caused by watching a movie.
+A Project for rating Movies with your own Heart rate.
+
