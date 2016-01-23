@@ -14,22 +14,9 @@ void serialEvent(Serial myPort){
      return;
    }
 
-//   if (inData.charAt(0) == 'S'){          // leading 'S' for sensor data
-//     inData = inData.substring(1);        // cut off the leading 'S'
-//     Sensor = int(inData);                // convert the string to usable int
-//   }
-
    if (inData.charAt(0) == 'B'){          // leading 'B' for BPM data
      inData = inData.substring(1);        // cut off the leading 'B'
      BPM = int(inData);                   // convert the string to usable int
    }
-   
-   if (inData.charAt(0) == 'S'){          // leading 'B' for BPM data
-     inData = inData.substring(1);        // cut off the leading 'B'
-     SKIN = int(inData);                   // convert the string to usable int
-   }
-
-
- 
-  
+    
 }
