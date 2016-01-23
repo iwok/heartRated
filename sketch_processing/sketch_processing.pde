@@ -6,12 +6,10 @@
  
  int Sensor;      // HOLDS PULSE SENSOR DATA FROM ARDUINO
  int BPM;         // HOLDS HEART RATE VALUE FROM ARDUINO
- int SKIN;        // HOLDS SKIN CONDUCTIVITY VALUE FROM ARDUINO
  
 
 void setup () {
   // set the window size:
-  size(200, 300);
    
   // Set FrameRate to 1 for better 
   //frameRate(1);
@@ -20,7 +18,6 @@ void setup () {
   // Add colums for sensor values
   table.addColumn("TIME");
   table.addColumn("BPM");
-  table.addColumn("SKIN");
   //table.addColumn("breathSensorVal");
 
  // List all the available serial ports
@@ -31,7 +28,6 @@ void setup () {
  // I know that the first port in the serial list on my mac
  // is always my  Arduino, so I open Serial.list()[0].
  // Open whatever port is the one you're using.
- myPort = new Serial(this, Serial.list()[1], 115200);
 
  // don't generate a serialEvent() unless you get a newline character:
  myPort.bufferUntil('\n');
@@ -43,16 +39,7 @@ void setup () {
 void draw () {
  // everything happens in the serialEvent()
  
- if(BPM>0){
-  TableRow newRow = table.addRow();
-  newRow.setInt("TIME", table.getRowCount() - 1);
-  newRow.setInt("BPM", BPM);
-  newRow.setInt("SKIN", SKIN);
-   
- saveTable(table, "data/data.csv"); 
- }
  
  delay(1000);
- 
  }
  
