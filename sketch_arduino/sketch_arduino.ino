@@ -14,17 +14,29 @@ volatile int IBI = 600;             // int that holds the time interval between 
 volatile boolean Pulse = false;     // "True" when User's live heartbeat is detected. "False" when not a "live beat". 
 volatile boolean QS = false;        // becomes true when Arduoino finds a beat.
 
+#include <SoftwareSerial.h>
+SoftwareSerial softSerial(6, 5); // RX, TX
+
 void setup() {
- Serial.begin(115200);
-    while (!Serial) {
-    ; // wait for serial port to connect. Needed for native USB port only
-  }
+// Serial.begin(57600);
+//    while (!Serial) {
+//    ; // wait for serial port to connect. Needed for native USB port only
+//  }
+  
   interruptSetup(); // sets up to read Pulse Sensor signal every 2mS 
   Serial.println("Waiting for Values ...");
 }
 
-void loop() { 
+    // set the data rate for the Serial port
+  Serial.begin(9600);
+  Serial.println("Serial start ...");
+   
+  softSerial.println("Waiting for Values ...");
 
+    // set the data rate for the SoftwareSerial port
+  softSerial.begin(9600);
+  softSerial.println("Software Serial start ...");
+}
 
   //serialOutput() ;  
   getMittelwertSkin();
